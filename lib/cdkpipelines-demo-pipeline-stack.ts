@@ -40,9 +40,9 @@ export class CdkpipelinesDemoPipelineStack extends Stack {
     });
 
     // This is where we add the application stages
-    pipeline.addApplicationStage(new CdkpipelinesDemoStage(this, 'PreProd', {
-	env: { account: '227392978404', region: 'eu-west-1' }
-	}));
+    //pipeline.addApplicationStage(new CdkpipelinesDemoStage(this, 'PreProd', {
+    //	env: { account: '227392978404', region: 'eu-west-1' }
+    //	}));
 
     pipeline.addApplicationStage(new CdkpipelinesDemoStage(this, 'Test', {
       env: { account: '642144804209', region: 'eu-west-1' }
