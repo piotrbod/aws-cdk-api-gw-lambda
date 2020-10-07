@@ -1,6 +1,6 @@
 # Welcome to your CDK TypeScript project!
 
-This is a blank project for TypeScript development with CDK.
+This is a blank project for TypeScript development with CDK and is effectively and output of the excercise described in this article: https://aws.amazon.com/blogs/developer/cdk-pipelines-continuous-delivery-for-aws-cdk-applications/
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
