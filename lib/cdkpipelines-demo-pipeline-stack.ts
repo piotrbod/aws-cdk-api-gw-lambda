@@ -25,8 +25,8 @@ export class CdkpipelinesDemoPipelineStack extends Stack {
         actionName: 'GitHub',
         output: sourceArtifact,
         oauthToken: SecretValue.secretsManager('github-token'),
-        owner: 'piotrbod',
-        repo: 'aws-cdk-api-gw-lambda',
+        owner: 'YOUR-GITHUB-NAME',
+        repo: 'YOUR-GITHUB-REPO-NAME',
       }),
 
        // How it will be built and synthesized
@@ -39,17 +39,12 @@ export class CdkpipelinesDemoPipelineStack extends Stack {
        }),
     });
 
-    // This is where we add the application stages
-    //pipeline.addApplicationStage(new CdkpipelinesDemoStage(this, 'PreProd', {
-    //	env: { account: '227392978404', region: 'eu-west-1' }
-    //	}));
-
     pipeline.addApplicationStage(new CdkpipelinesDemoStage(this, 'Test', {
-      env: { account: '642144804209', region: 'eu-west-1' }
+      env: { account: 'ACCOUNT2', region: 'eu-west-1' }
     }));
 
     const preprod = new CdkpipelinesDemoStage(this, 'PreProd', {
-    	env: { account: '227392978404', region: 'eu-west-1' }
+    	env: { account: 'ACCOUNT1', region: 'eu-west-1' }
 	});
 
     const preprodStage = pipeline.addApplicationStage(preprod);
